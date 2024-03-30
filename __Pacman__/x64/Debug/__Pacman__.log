@@ -1,0 +1,8 @@
+﻿  Game.cpp
+  Ghost.cpp
+  GhostManager.cpp
+  Map.cpp
+  Pacman.cpp
+  main.cpp
+  Generating Code...
+  __Pacman__.vcxproj -> C:\src\c++\__Pacman__\x64\Debug\__Pacman__.exe

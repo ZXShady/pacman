@@ -1,0 +1,242 @@
+﻿  Game.cpp
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(7,27): error C2065: 'Ghost': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(7,33): error C2059: syntax error: '>'
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(11,38): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(11,33): error C2146: syntax error: missing '>' before identifier 'Ghost'
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(26,11): error C3646: 'mBlinky': unknown override specifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(26,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(27,11): error C3646: 'mPinky': unknown override specifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(27,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(28,11): error C3646: 'mInky': unknown override specifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(28,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(29,11): error C3646: 'mClyde': unknown override specifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(29,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,38): error C2065: 'Ghost': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,1): error C2059: syntax error: '>'
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,16): error C2062: type 'unknown-type' unexpected
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,45): error C2143: syntax error: missing ';' before '{'
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,48): error C2065: 'mBlinky': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,57): error C2065: 'mPinky': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,65): error C2065: 'mInky': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,72): error C2065: 'mClyde': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(9,79): error C2143: syntax error: missing ';' before '}'
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,44): error C2146: syntax error: missing '>' before identifier 'Ghost'
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,16): error C2062: type 'unknown-type' unexpected
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,51): error C2143: syntax error: missing ';' before '{'
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,54): error C2065: 'mBlinky': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,63): error C2065: 'mPinky': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,71): error C2065: 'mInky': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,78): error C2065: 'mClyde': undeclared identifier
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\GhostManager.hpp(13,85): error C2143: syntax error: missing ';' before '}'
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35): error C2672: 'begin': no matching overloaded function found
+  (compiling source file 'pacman/Game.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1824,27):
+  could be '_Ty *std::begin(_Ty (&)[_Size]) noexcept'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  	'_Ty *std::begin(_Ty (&)[_Size]) noexcept': could not deduce template argument for '_Ty (&)[_Size]' from 'unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1806,30):
+  or       'unknown-type std::begin(const _Container &) noexcept(<expr>)'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  	Failed to specialize function template 'unknown-type std::begin(const _Container &) noexcept(<expr>)'
+  		C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  		With the following template arguments:
+  			C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  			'_Container=unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1800,30):
+  or       'unknown-type std::begin(_Container &) noexcept(<expr>)'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  	Failed to specialize function template 'unknown-type std::begin(_Container &) noexcept(<expr>)'
+  		C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  		With the following template arguments:
+  			C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  			'_Container=unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\initializer_list(54,35):
+  or       'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  	'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35): error C2672: 'end': no matching overloaded function found
+  (compiling source file 'pacman/Game.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1829,27):
+  could be '_Ty *std::end(_Ty (&)[_Size]) noexcept'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  	'_Ty *std::end(_Ty (&)[_Size]) noexcept': could not deduce template argument for '_Ty (&)[_Size]' from 'unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1818,30):
+  or       'unknown-type std::end(const _Container &) noexcept(<expr>)'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  	Failed to specialize function template 'unknown-type std::end(const _Container &) noexcept(<expr>)'
+  		C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  		With the following template arguments:
+  			C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  			'_Container=unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1812,30):
+  or       'unknown-type std::end(_Container &) noexcept(<expr>)'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  	Failed to specialize function template 'unknown-type std::end(_Container &) noexcept(<expr>)'
+  		C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  		With the following template arguments:
+  			C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  			'_Container=unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\initializer_list(59,35):
+  or       'const _Elem *std::end(std::initializer_list<_Elem>) noexcept'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35):
+  	'const _Elem *std::end(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35): error C3536: '<begin>$L0': cannot be used before it is initialized
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,35): error C3536: '<end>$L0': cannot be used before it is initialized
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(106,37): error C2100: illegal indirection
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40): error C2672: 'begin': no matching overloaded function found
+  (compiling source file 'pacman/Game.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1824,27):
+  could be '_Ty *std::begin(_Ty (&)[_Size]) noexcept'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  	'_Ty *std::begin(_Ty (&)[_Size]) noexcept': could not deduce template argument for '_Ty (&)[_Size]' from 'unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1806,30):
+  or       'unknown-type std::begin(const _Container &) noexcept(<expr>)'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  	Failed to specialize function template 'unknown-type std::begin(const _Container &) noexcept(<expr>)'
+  		C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  		With the following template arguments:
+  			C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  			'_Container=unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1800,30):
+  or       'unknown-type std::begin(_Container &) noexcept(<expr>)'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  	Failed to specialize function template 'unknown-type std::begin(_Container &) noexcept(<expr>)'
+  		C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  		With the following template arguments:
+  			C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  			'_Container=unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\initializer_list(54,35):
+  or       'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  	'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40): error C2672: 'end': no matching overloaded function found
+  (compiling source file 'pacman/Game.cpp')
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1829,27):
+  could be '_Ty *std::end(_Ty (&)[_Size]) noexcept'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  	'_Ty *std::end(_Ty (&)[_Size]) noexcept': could not deduce template argument for '_Ty (&)[_Size]' from 'unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1818,30):
+  or       'unknown-type std::end(const _Container &) noexcept(<expr>)'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  	Failed to specialize function template 'unknown-type std::end(const _Container &) noexcept(<expr>)'
+  		C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  		With the following template arguments:
+  			C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  			'_Container=unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\xutility(1812,30):
+  or       'unknown-type std::end(_Container &) noexcept(<expr>)'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  	Failed to specialize function template 'unknown-type std::end(_Container &) noexcept(<expr>)'
+  		C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  		With the following template arguments:
+  			C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  			'_Container=unknown-type'
+  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\initializer_list(59,35):
+  or       'const _Elem *std::end(std::initializer_list<_Elem>) noexcept'
+  	C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40):
+  	'const _Elem *std::end(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'unknown-type'
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40): error C3536: '<begin>$L2': cannot be used before it is initialized
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,40): error C3536: '<end>$L2': cannot be used before it is initialized
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,42): error C2100: illegal indirection
+  (compiling source file 'pacman/Game.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,42): error C2440: 'initializing': cannot convert from 'int' to 'pacman::Ghost *'
+  (compiling source file 'pacman/Game.cpp')
+  C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Pacman.hpp(150,42):
+  Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or parenthesized function-style cast
+  
+  Ghost.cpp
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Ghost.hpp(38,15): error C2143: syntax error: missing ';' before '<'
+  (compiling source file 'pacman/Ghost.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Ghost.hpp(38,15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'pacman/Ghost.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Ghost.hpp(38,26): error C2238: unexpected token(s) preceding ';'
+  (compiling source file 'pacman/Ghost.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Ghost.hpp(42,10): error C2065: 'MinMax': undeclared identifier
+  (compiling source file 'pacman/Ghost.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Ghost.hpp(42,17): error C2062: type 'int' unexpected
+  (compiling source file 'pacman/Ghost.cpp')
+  
+C:\src\c++\__Pacman__\__Pacman__\pacman\headers\Ghost.hpp(42,20): fatal  error C1907: unable to recover from previous error(s); stopping compilation
+  INTERNAL COMPILER ERROR in 'C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\CL.exe'
+      Please choose the Technical Support command on the Visual C++
+      Help menu, or open the Technical Support help file for more information
