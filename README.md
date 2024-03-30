@@ -4,15 +4,21 @@
 Controls
 
 W: move up
+
 S: move down
+
 A: move left
+
 D: move right
 
 R: reset level
+
 P: pause
+
 C: enable debug info (FPS + Game Speed)
 
 Up Arrow: increase game speed
+
 Down Arrow: decrease game speed
 
 
