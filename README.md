@@ -17,6 +17,8 @@ P: pause
 
 C: enable debug info (FPS + Game Speed)
 
+Escape Key: exit game
+
 Up Arrow: increase game speed
 
 Down Arrow: decrease game speed
