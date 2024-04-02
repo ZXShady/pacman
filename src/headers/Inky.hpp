@@ -25,9 +25,9 @@ public:
     void setTarget(sf::Vector2i pacman_pos, Direction pacman_direction, sf::Vector2i blinky_pos)
     {
         if (mMode == Mode::Chase) {
-            mTargetPos = pacman_pos;
+            //mTargetPos = pacman_pos;
             //mTargetPos = nextPosition(pacman_pos, pacman_direction, kCellSize * kChaseDistance);
-            //mTargetPos += mTargetPos - blinky_pos;
+            mTargetPos = (pacman_pos - blinky_pos) * 2;
 
         }
     }

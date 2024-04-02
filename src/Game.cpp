@@ -148,6 +148,7 @@ void pacman::Game::run() {
 			time_since_last_update -= time_per_frame;
 			if (mGameState != GameState::Paused) {
 				update(time_per_frame);
+				tickTimers();
 			}
 		}
 		mFps = static_cast<int>(1.0f / fps_clock.restart().asSeconds());
@@ -170,9 +171,8 @@ void pacman::Game::processEvents()
 					else if (mGameState == GameState::Paused)
 						mGameState = GameState::Playing;
 					break;
-				case sf::Keyboard::Key::Enter:
-					if (mPacman.isDead())
-						lose();
+				case sf::Keyboard::Key::Escape:
+					exit();
 					break;
 				case sf::Keyboard::Key::R:
 					reset();
@@ -186,6 +186,15 @@ void pacman::Game::processEvents()
 				case sf::Keyboard::Key::C:
 					mDebugInfoOn = !mDebugInfoOn;
 					break;
+				//case sf::Keyboard::Key::X:
+				//	for (auto& p : mMap.data.portals) {
+				//		printf("\nID = %d ",p.id);
+				//		for (auto link : p.links) {
+				//			printf(" cell = [%d,%d]", link->pos.x, link->pos.y);
+				//		}
+				//	}
+				//	break;
+				//
 			}
 		}
 	}
@@ -222,10 +231,10 @@ void pacman::Game::update(sf::Time delta_time)
 void pacman::Game::render()
 {
 	mWindow->clear();
+	mPacman.draw(*mWindow);
 	if (mGameState != GameState::Win && mGameState != GameState::Lose) {
 		mMap.draw(*mWindow);
 		mGhostManager.draw(*mWindow);
-		mPacman.draw(*mWindow);
 		std::vector<std::string> strs = {
 			std::string("Level: ")
 			+ std::to_string(mMap.data.level),
@@ -261,17 +270,18 @@ void pacman::Game::render()
 				kCellSize * kMapHeight + y);
 			mWindow->draw(mText);
 		}
-		mLivesSprite->setTextureRect(makeIntRect(1, 1));
+		mLivesSprite->setTextureRect(makeIntRect(2,2));
 		for (int cnt = 0; cnt < mLives; ++cnt) {
 			auto pos = mText.getPosition();
-			mLivesSprite->setPosition(pos.x, pos.y + 2 * mText.getCharacterSize());
+			mLivesSprite->setPosition(pos.x + x, pos.y + 2 * mText.getCharacterSize());
 			mWindow->draw(*mLivesSprite);
+			x += kTextureSize;
 		}
 	}
 	if (mGameState == GameState::Win) {
 		const std::string strs[] = {
-			"You Win! :D",
-			"It will get harder!"
+			"YOU WIN! :D",
+			"IT WILL GET HARDER!"
 		};
 		int x = 0;
 		int y = 0;
@@ -288,7 +298,7 @@ void pacman::Game::render()
 
 	if (mGameState == GameState::Lose) {
 		mText.setCharacterSize(16);
-		mText.setString("You Lose! :(");
+		mText.setString("YOU LOSE! :(");
 		mText.setPosition(
 			kCellSize * kMapWidth / 2-(mText.getCharacterSize()*mText.getString().getSize()/2),
 			kCellSize * kMapHeight / 2+mText.getCharacterSize());
@@ -314,9 +324,9 @@ void pacman::Game::lose()
 		mGhostManager.reset(mMap.data);
 	}
 	
-	mLoseSound.setBuffer(mSoundBufferManager.get(SoundBufferID::RareLoss));
-	if (rand() % 5 == 0) {
-		mLoseSound.setVolume(70.0f);
+	if (std::rand() % 10 == 0) {
+		mLoseSound.setBuffer(mSoundBufferManager.get(SoundBufferID::RareLoss));
+		mLoseSound.setVolume(60.0f);
 		mLoseSound.play();
 	}
 }
@@ -347,6 +357,13 @@ void pacman::Game::reset()
 	mMap.loadSketch(mMapSketches[rand() % mMapSketches.size()]);
 	mPacman.reset(mMap.data);
 	mGhostManager.reset(mMap.data);
+}
+
+void pacman::Game::tickTimers()
+{
+	mMap.tickTimers();
+	mPacman.tickTimers();
+	mGhostManager.tickTimers();
 }
 
 void pacman::Game::win()

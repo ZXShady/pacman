@@ -18,7 +18,6 @@ void pacman::GhostManager::update(const Map& map, sf::Vector2i pacman_pos, Direc
 			ghost->setMode(mCurrentMode);
 		}
 	}
-	tickTimers();
 }
 
 void pacman::GhostManager::setTargets(const Map& map, sf::Vector2i pacman_pos, Direction pacman_direction)
@@ -77,6 +76,10 @@ void pacman::GhostManager::tickTimers()
 	if (mTimeUntilGhostSiren==0) {
 		mTimeUntilGhostSiren = std::max(20_sec,std::rand() % 30_sec);
 		mGhostSirenSound.play();
+	}
+
+	for (auto g : get()) {
+		g->tickTimers();
 	}
 }
 

@@ -184,7 +184,7 @@ public:
     constexpr static int kSpeedWhenScatter     = 1;
     constexpr static int kSpeedWhenEaten       = 3;
     constexpr static int kSpeedWhenFrightened  = 1;
-
+    constexpr static int kSpeedWhenReachingTarget  = 1;
 };
 }
 #endif // !PACMAN_GHOST_HPP

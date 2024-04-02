@@ -30,6 +30,23 @@ void pacman::Pacman::reset(const typename Map::Data& data)
 	mState = PacmanState::None;
 }
 
+void pacman::Pacman::tickTimers() noexcept
+{
+	++mAnimationTimer;
+	if (mAnimationTimer >= getMaxAnimationTimer()) {
+		mAnimationTimer = 0;
+	}
+
+	if (mEnergizerTimer > 0) {
+		--mEnergizerTimer;
+	}
+
+	if(isDead()) {
+		mDeathAnimationTimer++;
+	}
+
+}
+
 void pacman::Pacman::update(GhostManager& ghosts, Map& map)
 {
 	for (auto spd = mSpeed; spd > 0; spd--) {
@@ -50,11 +67,13 @@ void pacman::Pacman::update(GhostManager& ghosts, Map& map)
 					}
 				}
 			}
+			
+			
 			if (-kCellSize >= pos.x)
 				pos.x = kCellSize * kMapWidth - mSpeed;
 			else if (kCellSize * kMapWidth - mSpeed <= pos.x)
 				pos.x = mSpeed - kCellSize;
-
+			
 			if (-kCellSize >= pos.y)
 				pos.y = kCellSize * kMapHeight - mSpeed;
 			else if (kCellSize * kMapHeight - mSpeed <= pos.y)
@@ -113,6 +132,5 @@ void pacman::Pacman::update(GhostManager& ghosts, Map& map)
 	if (score > high_score) {
 		high_score = score;
 	}
-	tickTimers();
 }
 

@@ -23,17 +23,16 @@ public:
 
     struct Phase {
         MinMax<int> level_range;
-        ModeDuration modes[9];
+        ModeDuration modes[8];
     };
     constexpr static Phase kPhases[] = {
-        {MinMax<int>{1,1},      {{ 3_sec,Ghost::Mode::Chase },{ 7_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{ 7_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{5_sec,Ghost::Mode::Chase},{ 20_sec,Ghost::Mode::Chase },{ 5_sec,Ghost::Mode::Scatter},{ 99999_min,Ghost::Mode::Chase }}},
-        {MinMax<int>{2,4},      {{ 3_sec,Ghost::Mode::Chase },{ 7_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{ 7_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{5_sec,Ghost::Mode::Chase},{ 17_min,Ghost::Mode::Chase },{ 5_sec,Ghost::Mode::Scatter},{ 99999_min,Ghost::Mode::Chase }}},
-        {MinMax<int>{5,999999}, {{ 3_sec,Ghost::Mode::Chase },{ 5_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{ 5_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{5_sec,Ghost::Mode::Chase},{ 17_min,Ghost::Mode::Chase },{ 5_sec,Ghost::Mode::Scatter},{ 99999_min,Ghost::Mode::Chase }}}
+        {MinMax<int>{1,1},      {{ 7_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{ 7_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{5_sec,Ghost::Mode::Chase},{ 20_sec,Ghost::Mode::Chase },{ 5_sec,Ghost::Mode::Scatter},{ 99999_min,Ghost::Mode::Chase }}},
+        {MinMax<int>{2,4},      {{ 7_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{ 7_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{5_sec,Ghost::Mode::Chase},{ 17_min,Ghost::Mode::Chase },{ 5_sec,Ghost::Mode::Scatter},{ 99999_min,Ghost::Mode::Chase }}},
+        {MinMax<int>{5,999999}, {{ 5_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{ 5_sec,Ghost::Mode::Scatter },{20_sec,Ghost::Mode::Chase},{5_sec,Ghost::Mode::Chase},{ 17_min,Ghost::Mode::Chase },{ 5_sec,Ghost::Mode::Scatter},{ 99999_min,Ghost::Mode::Chase }}}
     };
 
     void startNextPhase();
     void tickTimers();
-    void changePhase(int level);
     void loadSounds(const SoundBufferManager& manager)
     {
         mGhostSirenSound.setBuffer(manager.get(SoundBufferID::GhostSiren));

@@ -18,6 +18,12 @@ public:
 			sf::Vector2i scatter_pos;
 			sf::Vector2i starting_pos;
 		};
+		struct portal {
+			int id;
+			std::vector<Cell*> links;
+		};
+
+		std::vector<portal> portals;
 		std::unordered_map<EntityID, value> entities;
 		std::unordered_map<CellType, int> cell_count;
 		std::vector<Cell> glass;
@@ -64,12 +70,15 @@ public:
 	using const_reverse_iterator = typename type::const_reverse_iterator;
 
 	void loadTextures(const TextureManager& manager);
-	void update()
+	void tickTimers()
 	{
 		++mEnergizerFlashingAnimation;
 		if (mEnergizerFlashingAnimation >= kMaxEnergizerFlashingAnimation) {
 			mEnergizerFlashingAnimation = 0;
 		}
+	}
+	void update()
+	{
 	}
 
 	void createMapImageFromASCII(const std::string& map_name, const std::vector<std::string>& ascii_sketch)
@@ -110,10 +119,9 @@ public:
 		Cell current_cell;
 
 		for (const auto& cells : sketch) {
-			for (auto cell : cells) {
+			for (auto c : cells) {
 				current_cell.type = CellType::Empty;
-
-				switch (cell) {
+				switch (c) {
 					case '#':
 						current_cell.type = CellType::Wall;
 						break;
@@ -164,15 +172,19 @@ public:
 					default:
 						assert(!"found undefined cell type");
 				}
-
 				current_cell.pos = { x,y };
 				data.cell_count[current_cell.type]++;
 				mCells.push_back(current_cell);
+
+
 				x += kCellSize;
 			}
 			y += kCellSize;
 			x = 0;
 		}
+
+
+
 	}
 
 
@@ -236,11 +248,11 @@ public:
 		float cell_x = pos.x / static_cast<float>(kCellSize);
 		float cell_y = pos.y / static_cast<float>(kCellSize);
 
-		for (int a = 0; a < 4; a++) {
+		for (int i = 0; i < 4; ++i) {
 			int x = 0;
 			int y = 0;
 
-			switch (a) {
+			switch (i) {
 				case 0: //Top left cell
 					x = static_cast<int>(std::floor(cell_x));
 					y = static_cast<int>(std::floor(cell_y));
@@ -369,6 +381,7 @@ public:
 		mCells.clear();
 		data.cell_count.clear();
 		data.glass.clear();
+		data.portals.clear();
 	}
 
 	int countCells(CellType type) const noexcept

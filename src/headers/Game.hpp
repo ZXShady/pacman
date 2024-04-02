@@ -36,6 +36,7 @@ public:
     void exit();
     void save();
     void reset();
+    void tickTimers();
 private:
     std::unique_ptr<sf::Sprite> mLivesSprite{ new sf::Sprite };
     int mLives{ 3 };

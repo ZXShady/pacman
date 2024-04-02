@@ -24,6 +24,7 @@ void pacman::Ghost::frighten()
 }
 
 
+
 void pacman::Ghost::chase()
 {
     mCanUseDoor = false;
@@ -57,6 +58,7 @@ void pacman::Ghost::setMode(Mode mode)
             scatter();
             break;
     }
+    setSpeed(mode);
 }
 
 void pacman::Ghost::die()
@@ -85,6 +87,9 @@ void pacman::Ghost::setSpeed(Mode mode)
             break;
         case Mode::Frightened:
             mSpeed = kSpeedWhenFrightened;
+            break;
+        case Mode::ReachTarget:
+            mSpeed = kSpeedWhenReachingTarget;
             break;
         case Mode::None:
             mSpeed = 1;
@@ -187,6 +192,4 @@ void pacman::Ghost::update(const Map& map)
             pos = nextPosition(pos, mDirection, 1);
         }
     }
-    tickTimers();
-
 }

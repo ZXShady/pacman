@@ -47,26 +47,7 @@ public:
 	
 	}
 
-	void tickTimers() noexcept 
-	{
-		++mAnimationTimer;
-		if (mAnimationTimer >= getMaxAnimationTimer()) {
-			mAnimationTimer = 0;
-		}
-
-		if (mEnergizerTimer > 0) {
-			--mEnergizerTimer;
-		}
-
-		if(isDead() && mState != PacmanState::Lost) {
-			mDeathAnimationTimer++;
-			if (mDeathAnimationTimer > kDeathAnimationDuration) {
-				mDeathAnimationTimer = 0;
-				mState = PacmanState::Lost;
-			}
-		}
-
-	}
+	void tickTimers() noexcept;
 	void update(GhostManager& ghosts, Map& map);
 
 	void draw(sf::RenderTarget& target)
@@ -95,18 +76,16 @@ public:
 				sprite.setRotation(0);
 				break;
 		}
-
 		if (!isDead()) {
 			if (mDirection == Direction::None)
 				sprite.setTextureRect(makeIntRect(0, 0));
 			else
 				sprite.setTextureRect(makeIntRect(mAnimationTimer / (getMaxAnimationTimer() / kAnimationFrameCount), 1));
 		}
-		else if(mState != PacmanState::Lost){
+		else if (mDeathAnimationTimer <= kDeathAnimationDuration) {
 			sprite.setTextureRect(makeIntRect(mDeathAnimationTimer / (kDeathAnimationDuration / kDeathAnimationFrameCount), 0));
-			sprite.setPosition(static_cast<float>(pos.x), static_cast<float>(pos.y));
 		}
-			sprite.setPosition(static_cast<float>(pos.x + x), static_cast<float>(pos.y + y));
+		sprite.setPosition(static_cast<float>(pos.x + x), static_cast<float>(pos.y + y));
 			target.draw(sprite);
 	}
 
