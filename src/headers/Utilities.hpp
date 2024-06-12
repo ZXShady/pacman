@@ -17,20 +17,11 @@ constexpr std::size_t size(T& t)
     return t.size();
 }
 
-template<typename T, typename Value>
-bool contains(const T& t,const Value& value) noexcept
+template<typename Container, typename Value>
+bool contains(const Container& t,const Value& value) noexcept
 {
     for (const auto& v : t)
         if (v == value)
-            return true;
-    return false;
-}
-
-template<typename T, typename Pred>
-bool containsIf(const T& t,Pred pred) noexcept
-{
-    for (const auto& v : t)
-        if (pred(v))
             return true;
     return false;
 }

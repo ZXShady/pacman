@@ -1,13 +1,13 @@
 #include <string>
 #include <array>
-#include "headers/Globals.hpp"
-#include "headers/Game.hpp"
-#include "headers/Pacman.hpp"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
 
+#include "headers/Globals.hpp"
+#include "headers/Game.hpp"
+#include "headers/Pacman.hpp"
 
 pacman::Game::Game()
 	: mWindow(new sf::RenderWindow(sf::VideoMode{
@@ -371,7 +371,7 @@ void pacman::Game::win()
 	if (mLives < 3)
 		++mLives;
 	mGameState = GameState::Playing;
-
+	
 	mWinSound.setBuffer(mSoundBufferManager.get(SoundBufferID::Intermission));
 	mWinSound.play();
 

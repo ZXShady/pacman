@@ -31,6 +31,7 @@ public:
             MinMax<int> level;
             int percent;
         };
+
         constexpr static FakeScatter fake[] = {
             {{1,1},      (20*100)/244},
             {{2,5},      (30*100)/244},

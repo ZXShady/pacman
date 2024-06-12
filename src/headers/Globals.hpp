@@ -33,6 +33,13 @@ constexpr inline bool in_minmax_range(Numeric value, MinMaxT range)
 {
     return range.min >= value && value <= range.max;
 }
+
+template<typename T>
+constexpr bool is_between(T value, T min, T max) noexcept
+{
+    return min >= value && value <= max;
+}
+
 constexpr int kFramesPerSecond = 60;
 
 
@@ -69,6 +76,13 @@ constexpr int kTicksPerSecond = kFramesPerSecond / 3;
 constexpr int kEnergizerDuration = 7_sec;
 constexpr int kFrightenedDuration = 7_sec;
 
+template<typename Enum>
+constexpr typename std::underlying_type<Enum>::type to_underlying(Enum e) noexcept
+{
+    static_assert(std::is_enum<Enum>::value, "Enum only are allowed");
+    return static_cast<typename std::underlying_type<Enum>::type>(e);
+}
+
 template<typename Float1,typename Float2>
 auto pythagoras(Float1 x, Float2 y) -> decltype(::std::sqrt(x * x + y * y))
 {
@@ -82,14 +96,19 @@ auto pythagoras(Vector vector) -> decltype(pythagoras(vector.x,vector.y))
 }
 
 
-
 enum struct Direction {
-    None,
-    Left,
-    Up,
-    Right,
-    Down
+    None = -1,
+    Left  = 0,
+    Up    = 1,
+    Right = 2,
+    Down  = 3,
+    Count
 };
+
+inline Direction randomDirection() noexcept
+{
+    return static_cast<Direction>(std::rand() % to_underlying(Direction::Count));
+}
 
 constexpr Direction Directions[] = {
     Direction::Left,
@@ -98,27 +117,17 @@ constexpr Direction Directions[] = {
     Direction::Down
 };
 
-inline Direction flipDirection(Direction direction)
+constexpr inline Direction flipDirection(Direction direction)
 {
-    switch (direction) {
-        case Direction::Left:
-            return Direction::Right;
-        case Direction::Right:
-            return Direction::Left;
-        case Direction::Up:
-            return Direction::Down;
-        case Direction::Down:
-            return Direction::Up;
-   }
-   return Direction::None;
-   //return direction == Direction::Left  ? Direction::Right
-   //    :  direction == Direction::Right ? Direction::Left
-   //    :  direction == Direction::Up    ? Direction::Down
-   //    :  direction == Direction::Down  ? Direction::Up
-   //    :  Direction::None;
-
-
+    return direction == Direction::None 
+        ? Direction::None
+        : static_cast<Direction>((to_underlying(direction) + 2) % to_underlying(Direction::Count));
 }
+static_assert(flipDirection(Direction::None) == Direction::None, "!");
+static_assert(flipDirection(Direction::Left) == Direction::Right, "!");
+static_assert(flipDirection(Direction::Right) == Direction::Left, "!");
+static_assert(flipDirection(Direction::Up) == Direction::Down, "!");
+static_assert(flipDirection(Direction::Down) == Direction::Up, "!");
 
 
 
@@ -133,11 +142,6 @@ enum struct CellType {
 inline sf::IntRect makeIntRect(int x, int y,int z = 1,int w = 1) noexcept
 {
     return sf::IntRect(x * kTextureSize, y * kTextureSize,z * kTextureSize, w * kTextureSize);
-}
-
-inline bool random_chance(int one_in) noexcept 
-{
-    return rand() % one_in == 0;
 }
 
 inline sf::Vector2i nextPosition(sf::Vector2i pos,Direction direction,int speed,double percentage = 1.0,bool forward = true) noexcept 
@@ -164,9 +168,9 @@ struct Cell {
     CellType type;
     sf::Vector2i pos;
     sf::Color color{ sf::Color::White };
+    
     sf::IntRect getIntRect() const noexcept
     {
-
         switch (type) {
             case CellType::Wall: return makeIntRect(0, 0);
             case CellType::Pellet: return makeIntRect(0, 1);
@@ -175,6 +179,7 @@ struct Cell {
         }
         return { 0,0,0,0 };
     }
+
     bool hasCollision() const noexcept
     {
         return type == CellType::Wall;

@@ -24,5 +24,14 @@ Up Arrow: increase game speed
 Down Arrow: decrease game speed
 
 
+# Building
+
+install {premake5} https://premake.github.io/
+
+run premake5.lua to generate gnu make or vs solution files or xcode files 
+
+this game is only tested on Windows
+
+
 # Special Thanks
 thanks for Ms Aya for how to invert vector.

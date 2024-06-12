@@ -169,7 +169,7 @@ void pacman::Ghost::update(const Map& map)
                 mDirection = optimal_direction;
         }
         else {
-            auto random_direction = static_cast<Direction>(rand() % 4 + 1);
+            Direction random_direction = randomDirection();
 
             for (auto dir : Directions) {
                 if (dir == flipDirection(mDirection))
@@ -181,7 +181,7 @@ void pacman::Ghost::update(const Map& map)
 
             if (ways > 0) {
                 while (wall(random_direction) || random_direction == flipDirection(mDirection))
-                    random_direction = static_cast<Direction>(rand() % 4 + 1);
+                    random_direction = randomDirection();
                 mDirection = random_direction;
             }
             else {
