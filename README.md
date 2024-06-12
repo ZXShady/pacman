@@ -30,6 +30,9 @@ install [premake5](https://premake.github.io/)
 
 run premake5.lua to generate gnu make or vs solution files or xcode files 
 
+ex:
+`premake5 vs2022`
+
 [!NOTE] this game is only tested on Windows since I am the one who made the premake5.lua file for SFML
 
 
