@@ -1,11 +1,42 @@
-local SFML = {}
+SFML = {}
+local cwd = os.getcwd();
 
-SFML.add_libdir = function(compiler)
+SFML.add_libdirs = function(compiler,filters)
+    local arch86 = {"architecture:x86"}
+    for _,v in ipairs(filters) do 
+        table.insert(arch86, v)
+    end
+    local arch64 = {"architecture:x86_64"}
+    for _,v in ipairs(filters) do 
+        table.insert(arch64, v)
+    end
+
     filter("architecture:x86")
-    libdirs("extlibs/libs-" .. compiler .. "/x86")
+      libdirs( cwd .. "/extlibs/bin/x86")
     filter("architecture:x86_64")
-    libdirs("extlibs/libs-" .. compiler .. "/x64")
+      libdirs(cwd .. "/extlibs/bin/x64")
+    filter(arch86)
+      libdirs(cwd .. "/extlibs/libs-" .. compiler .. "/x86")
+    filter(arch64)
+      libdirs(cwd .. "/extlibs/libs-" .. compiler .. "/x64")
     filter({})
+end
+
+SFML.add_links = function()
+  links({"openal32","opengl32","freetype","flac"
+        ,"vorbisenc","vorbisfile","vorbis","ogg"})
+  filter("system:linux or freebsd or macosx")
+    links("pthread")
+  filter("system:linux")
+    links("rt")
+  filter("system:windows")
+    links("winmm")
+    links("ws2_32")
+  filter({"toolset:msc*","system:windows"})
+    links("legacy_stdio_definitions")
+  filter("system:android")
+    links({"android","log"})
+  filter({})
 end
 
 project("SFML")
@@ -45,12 +76,7 @@ project("SFML")
     includedirs("extlibs/headers/" .. value)
   end
 
-  filter("architecture:x86")
-    libdirs("extlibs/bin/x86")
-  filter("architecture:x86_64")
-    libdirs("extlibs/bin/x64")
-  filter({})
-
+  
   includedirs({"include"})
   includedirs({"src"})
 
@@ -83,38 +109,23 @@ project("SFML")
     end
   filter({})
 
-  filter("toolset:msc*")
-    SFML.add_libdir("msvc")
-  filter("toolset:gcc* or clang*")
-    SFML.add_libdir("mingw")
-  filter({})
-
-  links({"openal32","opengl32","freetype","flac"
-  ,"vorbisenc","vorbisfile","vorbis","ogg"})
-
-  filter("system:linux or freebsd or macosx")
-    links("pthread")
-  filter("system:linux")
-    links("rt")
-  filter("system:windows")
-    links("winmm")
-    links("legacy_stdio_definitions")
-  filter("system:android")
-    links({"android","log"})
-  filter({})
+  SFML.add_libdirs("msvc",{"toolset:msc*"})
+  SFML.add_libdirs("mingw",{"toolset:clang* or gcc*"})
+  SFML.add_links()
 
   warnings("off")
-  disablewarnings(4068) -- Unknown Pragma
-  disablewarnings(4996) -- C4996 can occur if you use MFC or ATL functions that were deprecated for security reasons
   filter("toolset:msc*")
-    defines(_CRT_SECURE_NO_WARNINGS)
+    disablewarnings(4068) -- Unknown Pragma
+    disablewarnings(4996) -- C4996 can occur if you use MFC or ATL functions that were deprecated for security reasons
   filter({})
 
-
-
-  function add_SFML()
+SFML.link_SFML = function()
     defines("SFML_STATIC")
     libdirs(cwd .. "/" .. TargetDir)
-    links("SFML")
     includedirs(cwd .. "/include")
-  end
+    SFML.add_libdirs("msvc",{"toolset:msc*"})
+    SFML.add_libdirs("mingw",{"toolset:clang* or gcc*"})
+    SFML.add_links()
+    links("SFML")
+end
+  

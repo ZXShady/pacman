@@ -2,8 +2,13 @@
 #define PACMAN_UTILITIES_HPP
 
 #include <cstdint>
+#include <type_traits>
 
 namespace pacman {
+
+template<typename T>
+using in = typename std::conditional<(sizeof(T) < sizeof(void*) * 2 && std::is_trivially_copyable<T>::value), T, const T&>::type;
+
 
 template<typename T,std::size_t N>
 constexpr std::size_t size(T(&)[N]) 

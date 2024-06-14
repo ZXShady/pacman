@@ -2,11 +2,15 @@
 #define PACMAN_RESOURCE_MANAGER_HPP
 
 #include <unordered_map>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio/SoundBuffer.hpp>
-
 #include <cassert>
 #include <initializer_list>
+#include <memory>
+
+namespace sf {
+class Texture;
+class SoundBuffer;
+class Font;
+}
 
 namespace pacman {
 
@@ -45,7 +49,7 @@ public:
     
     ResourceType& load(IDType id, const ::std::string& file_path) 
     {
-        auto texture = std::make_unique<ResourceType>();
+        Ptr texture{ new ResourceType() };
 
         if (!texture->loadFromFile(file_path))
             assert(!"texture couldn't be loaded!");
@@ -83,8 +87,11 @@ public:
         assert("texture not loaded" && found != mResourceMap.end());
         return *found->second;
     }
+
+    
 private:
-    using map_type = std::unordered_map<IDType, std::unique_ptr<ResourceType>>;
+    using Ptr = std::unique_ptr<ResourceType>;
+    using map_type = std::unordered_map<IDType, Ptr >;
     map_type mResourceMap;
 };
 

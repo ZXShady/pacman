@@ -1,6 +1,9 @@
 #include "headers/GhostManager.hpp"
 #include <array>
 
+using namespace pacman;
+constexpr GhostManager::Phase GhostManager::kPhases[];
+
 void pacman::GhostManager::update(const Map& map, sf::Vector2i pacman_pos, Direction pacman_direction)
 {
 	setTargets(map, pacman_pos, pacman_direction);

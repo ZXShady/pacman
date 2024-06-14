@@ -1,0 +1,18 @@
+{
+  "Animations": {
+    "Death": {
+      "Frames": 12,
+      "Duration": 1.0
+    },
+    "Moving": {
+      "Frames": 5,
+    }
+  },
+
+  "Scores": {
+    "EatingGhost": 30,
+    "Dying": -100,
+    "EatingEnergizer": 10,
+    "EatingPellet": 1
+  }
+}

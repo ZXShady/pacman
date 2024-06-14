@@ -31,6 +31,7 @@ project("Pacman")
   targetdir(TargetDir)
   objdir(ObjectDir)
 
-	add_SFML()
+ 
+	SFML.link_SFML()
 
   files({"src/**.cpp","src/**.hpp"})

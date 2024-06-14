@@ -10,7 +10,6 @@
 #include <type_traits>
 #include <cmath>
 
-#define PRINTVEC2(v) printf(#v "= [%d,%d] line : %d,file : %s",v.x,v.y,__LINE__,__FILE__)
 namespace pacman {
 
 enum class EntityID {

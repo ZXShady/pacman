@@ -1,0 +1,31 @@
+{
+  "Animations": {
+    "Moving": {
+      "SpriteSheet": "images/ghost_16.png",
+      "Resolution": {
+        "w": 16,
+        "h": 16
+      },
+      "Frames": 6,
+      "Speed": 1.0
+    }
+  }
+
+  "Modes": {
+    "Chasing": {
+      "Speed": 1
+    },
+    "Scatter": {
+      "Speed": 1
+    },
+    "Dead": {
+      "Speed": 3
+    },
+    "Frightened": {
+      "Speed": 1
+    },
+    "ReachingTarget": {
+      "Speed" : 1
+    }
+  }
+}
