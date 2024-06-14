@@ -26,11 +26,14 @@ Down Arrow: decrease game speed
 
 # Building
 
-install {premake5} https://premake.github.io/
+install [premake5](https://premake.github.io/)
 
 run premake5.lua to generate gnu make or vs solution files or xcode files 
 
-this game is only tested on Windows
+ex:
+`premake5 vs2022`
+
+[!NOTE] this game is only tested on Windows since I am the one who made the premake5.lua file for SFML
 
 
 # Special Thanks
